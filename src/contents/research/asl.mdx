@@ -1,0 +1,35 @@
+---
+title: Sign Language Recognition System
+date: 2024-03 to 2024-07
+abstract: >
+  I developed the web application and deployment pipeline for an AI-powered sign language recognition system designed to help hearing families learn ASL. My work on real-time feedback features and AWS deployment contributed to research presented at ICDLT 2024.
+category: AI/Computer Vision
+role: Research Assistant & Full-Stack Developer
+github: https://github.com/deeplearning-lab-csueb/ASL-webapp
+url: https://deeplearning-lab-csueb.github.io/ASL-webapp/
+keywords:
+  - computer vision
+  - accessibility
+  - real-time processing
+  - social impact
+  - deep learning
+  - MediaPipe
+---
+
+![Sign Language Recognition web app interface showing real-time landmark detection](/images/research/asl/website_interface.png)
+
+## Overview
+
+Every day, 33 babies are born with permanent hearing loss in the U.S., and around 90% are born to hearing parents who often don't know American Sign Language. Without early access to sign language, these children risk Language Deprivation Syndrome, which can seriously impact their education, relationships, and future employment. Learning ASL is challenging—comparable to learning Japanese for English speakers—and many families simply don't have the time or resources for classes. This project, part of Professor Hongmin Li's research, aimed to make learning basic signs more accessible through AI.
+
+As part of a three-person team, I worked with data from Google's Isolated Sign Language Recognition competition to build a TensorFlow Lite model for classifying isolated ASL signs. **My primary responsibility was developing the interactive web application and deployment infrastructure**—essentially translating our research model into something hearing parents could actually use. While my teammates focused on model architecture and training, I concentrated on creating an interface that provided real-time, actionable feedback to learners.
+
+I implemented **real-time landmark extraction using MediaPipe Holistic**, which visually tracks users' hand and body positions as they practice signs. This immediate visual feedback proved crucial—users could see instantly whether their gestures matched expected patterns, turning an abstract AI prediction into concrete learning guidance. I also built a **recording feature** that served dual purposes: it allowed users to capture and review their signing progress, while simultaneously generating new training data that helped improve our model's accuracy. To make the system widely accessible, I **deployed the entire stack on AWS**, configuring the model files and JSON settings in S3 and hosting the web app so anyone with internet access could use it.
+
+Beyond the technical work, this project shaped how I think about the gap between research and real-world impact. Presenting our work at ICDLT 2024 and demonstrating the live app reinforced that good AI research isn't just about model accuracy—it's about building tools that actually help people. Seeing how computer vision could reduce communication barriers for deaf communities showed me the kind of work I want to pursue: technology that creates tangible social value, not just impressive benchmarks.
+
+## Selected visuals
+
+![Sign Language Visualization - "Thank you" Sign](/images/research/asl/thankyou.gif)
+
+![Recording interface allowing users to practice signs and receive instant feedback](/images/research/asl/grandpa.png)

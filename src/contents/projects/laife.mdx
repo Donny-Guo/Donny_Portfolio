@@ -1,0 +1,37 @@
+---
+title: lAIfe - The AI Life Simulator
+date: 2025-03
+abstract: >
+  I led a four-person team to build lAIfe, an AI-powered life simulator that lets users explore how different decisions might shape their lives. The project won first place in the AI track at HackHayward 2025 by combining narrative generation with an intuitive full-stack interface that makes complex "what if" scenarios feel personal and engaging.
+category: AI/Full-Stack
+role: Team Leader & Full-Stack Developer
+github: https://github.com/Donny-Guo/lAIfe
+keywords:
+  - interactive storytelling
+  - decision simulation
+  - narrative AI
+  - prompt engineering
+  - cyberpunk gaming
+  - life path exploration
+---
+
+![lAIfe Night City Version Interface](/images/projects/laife/start_page.png)
+
+## Overview
+
+lAIfe started from a simple observation: everyone wonders about the roads not taken. During late-night conversations with my team, we realized that the "what ifs" people carry—different careers, education paths, relationships—are universal, but there's no easy way to explore them meaningfully. With recent advances in large language models, I saw an opportunity to build something that could simulate these alternate realities in a way that felt personal and grounded in realistic cause-and-effect, not just random chance.
+
+I framed the design around making complex AI-generated narratives feel **accessible and emotionally resonant**. Rather than overwhelming users with technical prompts or abstract scenarios, we built a conversational interface where people input key life details and decision points they're curious about, and the system generates coherent life trajectories that follow logical consequences. The challenge was balancing creative storytelling with realism—users needed to feel like they were seeing genuine possibilities, not science fiction. To achieve this, I developed a **sophisticated prompt engineering system** that dynamically incorporates user statistics, past decisions, and realistic constraints to shape each narrative branch.
+
+Our latest iteration, **"Night City Version,"** takes this concept into a cyberpunk setting inspired by dystopian fiction, where choices have dramatic stakes. Users select from three life paths (Nomad, Street Kid, or Corporate) and navigate 10 rounds of scenarios that test their ethics and survival instincts in a world where power is everything. With stats tracking Health, Intelligence, and Wealth, every decision affects not just the story but the character's chance of survival. This version proved especially compelling at HackHayward 2025, where it helped us win first place in the AI track by demonstrating how AI-driven narratives can create genuinely immersive experiences.
+
+![lAIfe Game System Design](/images/projects/laife/game_system_design.png)
+
+On the technical side, I architected the system with a **Python/Flask backend** that handles API integration with Groq for language model processing, and a **React.js frontend** that creates a responsive, game-like interface. I designed a JSON-based state management system that preserves simulation context across sessions, allowing users to revisit their alternate lives without losing progress. The entire flow—from user input through AI generation to rendered narrative—happens seamlessly, making complex AI feel effortless to interact with.
+
+Beyond its entertainment value, lAIfe has broader applications. Educators have expressed interest in using it as a teaching tool for decision theory and ethics courses, while creative writers see it as a narrative prototyping system for testing character arcs. Looking ahead, we're expanding the simulator to support full life cycle simulations starting from birth through 12 major age stages, allowing early decisions to cascade into later opportunities and challenges. My goal is to evolve lAIfe from a hackathon project into a tool that helps people gain perspective on their past and approach future choices with greater clarity.
+
+## Selected visuals
+
+![lAIfe Decision Making Page](/images/projects/laife/decision_making_page.png)
+![lAIfe End Page](/images/projects/laife/end_of_game_page.png)
