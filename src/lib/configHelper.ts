@@ -4,9 +4,9 @@ import { generateImageUrl } from '@/utils'
 
 export const siteBaseUrl = EnjuConfig.siteUrl.replace(/\/$/, '')
 
-export const authorPictureBase = generateImageUrl(siteBaseUrl, EnjuConfig.homePage.picture ?? '/images/profile.webp') as string
+export const authorPictureBase = generateImageUrl(siteBaseUrl, EnjuConfig.homePage.picture ?? '/images/profile.jpg') as string
 
-export const authorPicture = generateImageUrl(siteBaseUrl, authorPictureBase ?? '/images/profile.webp')
+export const authorPicture = generateImageUrl(siteBaseUrl, authorPictureBase ?? '/images/profile.jpg')
 
 export const authorAllNames = uniqueArray([EnjuConfig.author, ...(EnjuConfig.otherNames ?? [])])
 

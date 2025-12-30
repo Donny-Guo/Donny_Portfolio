@@ -4,7 +4,7 @@ import { IBM_Plex_Serif, Inter, JetBrains_Mono } from 'next/font/google'
 import { BackToTop, Footer, Header, ScrollPositionBar } from '@/components/common/layout'
 import { EnjuConfig } from '@/enju.config'
 import { buildMetadata } from '@/lib'
-import { authorPictureBase, showRss } from '@/lib/configHelper'
+import { authorPictureBase } from '@/lib/configHelper'
 import { HomePageDescription } from '@/utils/pages-description'
 import './globals.css'
 
@@ -43,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {showRss && <link rel="alternate" type="application/rss+xml" href="/feed.xml" title={`${EnjuConfig.subTitle} - RSS Feed`} />}
+      {/* {showRss && <link rel="alternate" type="application/rss+xml" href="/feed.xml" title={`${EnjuConfig.subTitle} - RSS Feed`} />} */}
       <body
         className={`${inter.variable} ${IBMPlexSerif.variable} ${jetBrainsMono.variable} font-sans flex max-h-full min-h-screen flex-col antialiased`}
       >

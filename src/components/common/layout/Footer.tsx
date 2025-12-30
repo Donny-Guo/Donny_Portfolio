@@ -32,6 +32,39 @@ const Footer = () => {
           >
             Elara Liu
           </a>
+          {' '}
+          · Modified by
+          {' '}
+          <a
+            href="https://dongpingguo.cc"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-hover-primary underline-interactive"
+          >
+            Donny Guo
+          </a>
+        </p>
+        <p>
+          <a
+            href="https://www.gnu.org/licenses/agpl-3.0.en.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-hover-primary underline-interactive"
+          >
+            AGPL v3
+          </a>
+          {' '}
+          {' '}
+          ·
+          {' '}
+          <a
+            href="https://github.com/Donny-Guo/Donny_Portfolio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-hover-primary underline-interactive"
+          >
+            Source Code
+          </a>
         </p>
       </div>
     </footer>

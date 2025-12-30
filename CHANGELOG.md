@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0] - 2025-12-30
+
+### Changed
+
+- Forked from [Enju Folio](https://github.com/ZL-Asica/EnjuFolio) by Elara Liu
+- Updated personal information and content
+
+---
+
+**Note:** This is a derivative work based on Enju Folio v0.2.1.
+The changelog below reflects the history of the original template.
+
+---
+
 ## [0.2.1] - 2025-12-14
 
 ### Fixed

@@ -23,6 +23,7 @@
 # misc
 .DS_Store
 *.pem
+package-lock.json
 
 # debug
 npm-debug.log*
@@ -39,9 +40,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-# Chore
-.DS_Store
 
 # Cloudflare
 .open-next
