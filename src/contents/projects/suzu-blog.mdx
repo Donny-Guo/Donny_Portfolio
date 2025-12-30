@@ -1,0 +1,37 @@
+---
+title: SuzuBlog
+date: 2024-10
+abstract: >
+  I designed and maintain SuzuBlog, a Next.js–based blog system that favors file-based authorship, a single config file, and static-by-default delivery so personal and academic sites stay fast, accessible, and easy to manage while still supporting i18n, comments, analytics, and llms.txt.
+img: /images/projects/thumbnails/SuzuBlog.png
+category: Web
+role: Independent Designer & Developer
+github: https://github.com/ZL-Asica/SuzuBlog
+url: https://suzu.zla.app/
+doi: '10.5281/zenodo.15377307'
+keywords:
+  - reading ergonomics
+  - config-as-code
+  - content provenance
+  - accessibility defaults
+  - LLM readiness
+  - static generation
+---
+
+![SuzuBlog landing preview — minimalist theme](/images/projects/suzublog/hero.png)
+
+## Overview
+
+SuzuBlog grew out of a very practical HCI problem: I wanted a blog that was pleasant to read and easy to maintain as a researcher, but most CMSes I tried pushed me toward admin dashboards, plugin jungles, and opaque hosting. I framed the design around two kinds of users—**readers**, who need clean typography and predictable behavior, and **authors**, who need low cognitive overhead, clear provenance, and tools that won’t break three years from now. That led me to a file-first approach where each post is a Markdown file with YAML frontmatter and the entire site is governed by a single `config.yml` rather than scattered runtime settings.
+
+On the design side, I treated reading ergonomics and accessibility as baseline constraints rather than “nice to have.” The theme is intentionally quiet—sakura-inspired colors, consistent rhythm, semantic HTML, and generated SEO/OG/JSON-LD metadata—so posts read more like long-lived essays than social feeds. Policy decisions such as license, comments, analytics, and language are expressed declaratively in `config.yml`, which doubles as a kind of **configuration-as-policy artifact**: you can diff changes, audit what’s turned on, and keep academic pages reproducible without poking through UI menus. Internationalization is likewise config-driven so multilingual personal sites don’t need boilerplate code on every page.
+
+Under the hood, I implemented SuzuBlog with **Next.js (App Router), TypeScript, and Tailwind CSS**, targeting static generation and ISR for predictable performance and easy hosting. A small set of plug-in points—comments (Disqus or Twikoo), analytics, social cards—are wired through config flags instead of hard-coded, and a GitHub Action keeps downstream sites in sync with the main template while preserving content. More recently, I added support for emitting `/llms.txt`, an emerging convention for guiding assistant crawlers to canonical, plain-text sources, so my own research notes and posts can be responsibly consumed by LLMs. SuzuBlog is open source on GitHub and archived on Zenodo, and now powers my personal site and other small academic pages as a **minimal, provenance-aware blog system** rather than yet another one-off portfolio.
+
+## Selected visuals
+
+![Excerpt of config.yml showing site identity, i18n, and policy knobs](/images/projects/suzublog/config.png)
+
+![llms.txt support to expose canonical content to LLM tools](/images/projects/suzublog/llms-txt.png)
+
+![Lighthouse report illustrating static-by-default performance and accessibility budgets](/images/projects/suzublog/lighthouse.png)

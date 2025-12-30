@@ -1,0 +1,42 @@
+@import 'tailwindcss';
+@import '../styles/theme.css';
+
+@theme inline {
+  --font-sans:
+    var(--font-inter), 'Roboto', 'Helvetica Neue', 'Segoe UI', 'Ubuntu', 'DejaVu Sans', 'Noto Sans', Arial, sans-serif;
+  --font-serif:
+    var(--font-ibm-plex-serif), 'Georgia', 'Times New Roman', 'Times', 'Palatino Linotype', 'Palatino', 'Book Antiqua',
+    serif;
+  --font-mono: var(--font-jetbrains-mono), 'Fira Code', 'Menlo', 'Consolas', 'Courier New', monospace;
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+/* TOC Scroll avoid hidden by header */
+.page-content [id] {
+  scroll-margin-top: 100px;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [class*='animate-[shimmer']::before {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

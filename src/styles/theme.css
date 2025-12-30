@@ -1,0 +1,147 @@
+@import './custom.css';
+@import './utilities.css';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme static {
+  /* Fade in down animation */
+  --animate-fade-in-down: fade-in-down 0.6s ease-out;
+  /* Ken Burns Effect animation */
+  --animate-ken-burns: ken-burns 1s ease-out forwards;
+  /* Blur in glow animation */
+  --animate-blur-in-glow: blur-in-glow 0.6s ease-out forwards;
+  /* Mask reveal animation */
+  --animate-mask-reveal: mask-reveal 1s ease-out forwards;
+
+  --animate-fade-in-soft: fade-in-soft 0.28s ease-out both;
+
+  @keyframes fade-in-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes ken-burns {
+    0% {
+      opacity: 0;
+      clip-path: inset(5%);
+      transform: scale(1.1111);
+    }
+    100% {
+      opacity: 1;
+      clip-path: inset(0);
+      transform: scale(1);
+    }
+  }
+
+  @keyframes blur-in-glow {
+    0% {
+      opacity: 0;
+      filter: brightness(1) blur(20px);
+    }
+    10% {
+      opacity: 1;
+      filter: brightness(2) blur(10px);
+    }
+    100% {
+      opacity: 1;
+      filter: brightness(1) blur(0);
+    }
+  }
+
+  @keyframes mask-reveal {
+    0% {
+      mask: linear-gradient(90deg, #000 25%, #000000e6 50%, #00000000) 150% 0 / 400% no-repeat;
+      opacity: 0.2;
+    }
+    100% {
+      mask: linear-gradient(90deg, #000 25%, #000000e6 50%, #00000000) 0 / 400% no-repeat;
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in-soft {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@theme inline {
+  /* Basic Colors */
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-gray-light: var(--gray-light);
+  --color-gray-dark: var(--gray-dark);
+}
+
+@layer utilities {
+  :root {
+    --background: #fefefe;
+    --foreground: #2d3748;
+    --gray-light: #f9fafb;
+    --gray-dark: #1f2937;
+  }
+
+  .dark:root {
+    --background: #161b22;
+    --foreground: #e2e8f0;
+    --gray-light: #1f2937;
+    --gray-dark: #d1d5db;
+  }
+}
+
+html,
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+/* Color Utils */
+@utility text-primary {
+  color: var(--color-primary-300);
+  @variant dark {
+    color: var(--color-primary-200);
+  }
+}
+@utility text-secondary {
+  color: var(--color-secondary-400);
+  @variant dark {
+    color: var(--color-secondary-300);
+  }
+}
+@utility text-accent {
+  color: var(--color-accent-300);
+  @variant dark {
+    color: var(--color-accent-200);
+  }
+}
+
+@utility bg-primary {
+  background-color: var(--color-primary-300);
+  @variant dark {
+    background-color: var(--color-primary-200);
+  }
+}
+@utility bg-secondary {
+  background-color: var(--color-secondary-400);
+  @variant dark {
+    background-color: var(--color-secondary-300);
+  }
+}
+@utility bg-accent {
+  background-color: var(--color-accent-300);
+  @variant dark {
+    background-color: var(--color-accent-200);
+  }
+}
