@@ -5,7 +5,8 @@ import path from 'node:path'
 import process from 'node:process'
 import { EnjuConfig } from '@/enju.config'
 import { readAllFileMeta } from '@/utils'
-import { CVPageDescription, HomePageDescription, ProjectsPageDescription, ResearchPageDescription } from './pages-description'
+import { CVPageDescription, HomePageDescription, ProjectsPageDescription } from './pages-description'
+// import { ResearchPageDescription } from './pages-description'
 
 // ===== helpers =====
 const CONTENT_ROOT = path.join(process.cwd(), 'src', 'contents')
@@ -104,7 +105,7 @@ const buildStaticSection = (siteUrl: string, subTitle: string): {
     '## Static pages',
     '',
     `- [Home](${siteUrl}/): ${HomePageDescription}`,
-    `- [Research](${siteUrl}/research): ${ResearchPageDescription}`,
+    // `- [Research](${siteUrl}/research): ${ResearchPageDescription}`,
     `- [Projects](${siteUrl}/projects): ${ProjectsPageDescription}`,
     `- [CV](${siteUrl}/cv): ${CVPageDescription}`,
   ]
@@ -122,11 +123,11 @@ const buildStaticSection = (siteUrl: string, subTitle: string): {
       title: `CV | ${subTitle}`,
       desc: CVPageDescription,
     },
-    {
-      path: `${siteUrl}/research`,
-      title: `Research | ${subTitle}`,
-      desc: ResearchPageDescription,
-    },
+    // {
+    //   path: `${siteUrl}/research`,
+    //   title: `Research | ${subTitle}`,
+    //   desc: ResearchPageDescription,
+    // },
     {
       path: `${siteUrl}/projects`,
       title: `Projects | ${subTitle}`,

@@ -13,14 +13,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   })
 
-  const research = (await readAllFileMeta('research')).map((file) => {
-    return {
-      ...file,
-      type: 'research',
-    }
-  })
+  // const research = (await readAllFileMeta('research')).map((file) => {
+  //   return {
+  //     ...file,
+  //     type: 'research',
+  //   }
+  // })
 
-  const allFiles = [...projects, ...research].sort((a, b) => {
+  // const allFiles = [...projects, ...research].sort((a, b) => {
+  //   return new Date(b.date).getTime() - new Date(a.date).getTime()
+  // })
+  const allFiles = [...projects].sort((a, b) => {
     return new Date(b.date).getTime() - new Date(a.date).getTime()
   })
 
@@ -46,8 +49,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPages = [
     { path: '/', priority: 1 },
     { path: '/cv', priority: 0.8 },
-    { path: '/posts', priority: 0.6 },
-    { path: '/friends', priority: 0.4 },
+    // { path: '/posts', priority: 0.6 },
+    // { path: '/friends', priority: 0.4 },
   ]
 
   const staticSitemap = staticPages.map(({ path, priority }) =>

@@ -2,7 +2,8 @@
 
 import { useTheme } from '@zl-asica/react'
 import clsx from 'clsx'
-import { Binoculars, FileUser, FolderKanban, House, Moon, Sun } from 'lucide-react'
+import { FileUser, FolderKanban, House, Moon, Sun } from 'lucide-react'
+// import { Binoculars } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Fragment } from 'react'
@@ -25,7 +26,7 @@ const HeaderMenu = ({ isMobile, className, onClickHandler }: HeaderMenuProps) =>
 
   const menuItems: MenuItem[] = [
     { href: '/', label: 'Home', icon: <House aria-hidden="true" /> },
-    { href: '/research', label: 'Research', icon: <Binoculars aria-hidden="true" /> },
+    // { href: '/research', label: 'Research', icon: <Binoculars aria-hidden="true" /> },
     { href: '/projects', label: 'Projects', icon: <FolderKanban aria-hidden="true" /> },
     { href: '/cv', label: 'CV', icon: <FileUser aria-hidden="true" /> },
   ]

@@ -1,0 +1,49 @@
+---
+title: Real-Time ASL Recognition Platform
+date: 2024-07-15
+abstract: >
+  Engineered an end-to-end web platform for American Sign Language learning (ASL), featuring client-side AI inference for low-latency feedback. Integrated TensorFlow Lite with React and MediaPipe, and established a serverless deployment pipeline on AWS. The system architecture and performance metrics were documented in a technical paper accepted for publication.
+category: Full-Stack / Edge AI
+role: Full-Stack Developer & AI Researcher
+github: https://github.com/deeplearning-lab-csueb/ASL-webapp
+url: https://deeplearning-lab-csueb.github.io/ASL-webapp/
+keywords:
+  - TensorFlow.js/Lite
+  - React
+  - AWS S3
+  - MediaPipe
+  - Client-side Inference
+  - Computer Vision
+---
+
+![Sign Language Recognition web app interface showing real-time landmark detection](/images/research/asl/website_interface.png)
+
+## System Overview
+
+Bridging the gap between complex AI models and accessible end-user applications is a significant engineering challenge. This project aimed to democratize American Sign Language (ASL) education by building a browser-based recognition system capable of running on consumer hardware without expensive server-side GPU costs. The goal was to combat Language Deprivation Syndrome by providing an accessible, automated tutor for families of deaf children.
+
+I architected and deployed the **full-stack web application**, transforming a raw deep learning model into a production-ready interactive tool. While the underlying model was trained on the Google Isolated Sign Language Recognition dataset, my focus was on **Model Serving** and **System Latency Optimization**. I engineered the pipeline to load and run the TensorFlow Lite model directly in the client's browser, ensuring real-time performance regardless of the user's internet speed.
+
+## Technical Implementation
+
+### Client-Side Inference & Visualization
+
+To achieve real-time responsiveness, I implemented a **client-side inference engine**. By decoupling the processing from the backend, I reduced server load and eliminated network latency during practice sessions.
+
+- **MediaPipe Integration:** Utilized MediaPipe Holistic to extract 3D landmarks of hands, face, and pose in real-time within the browser.
+- **Visual Feedback Loop:** Built a React-based interface that overlays skeleton tracking on the video feed. This provides immediate visual confirmation to users, closing the feedback loop between human gesture and machine interpretation.
+
+### Data Pipeline & Deployment
+
+Beyond the UI, I built the infrastructure required to scale the application:
+
+- **AWS Deployment:** Configured a serverless hosting architecture using **AWS S3** for static assets and model weights. This ensured high availability and decoupled the frontend from the storage logic.
+- **Data Collection:** Developed a recording module that captures user interactions. This feature not only allows users to review their progress but also serves as a data ingestion pipeline to collect real-world samples for future model fine-tuning.
+
+This project demonstrated the viability of **Edge AI** in educational tools. The system's engineering design and user efficacy were documented in a technical paper accepted for publication, validating both the technological implementation and its practical application.
+
+## Selected visuals
+
+![Sign Language Visualization - "Thank you" Sign](/images/research/asl/thankyou.gif)
+
+![Recording interface allowing users to practice signs and receive instant feedback](/images/research/asl/grandpa.png)

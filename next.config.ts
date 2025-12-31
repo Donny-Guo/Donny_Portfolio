@@ -59,21 +59,6 @@ const nextConfig: NextConfig = {
         destination: '/',
         permanent: true,
       },
-      {
-        source: '/projects/LifeTune',
-        destination: '/projects/life-tune',
-        permanent: true,
-      },
-      {
-        source: '/projects/SuzuBlog',
-        destination: '/projects/suzu-blog',
-        permanent: true,
-      },
-      {
-        source: '/projects/BelugaSubs',
-        destination: '/projects/beluga-subs',
-        permanent: true,
-      },
     ]
   },
 }

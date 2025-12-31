@@ -36,7 +36,7 @@ const Footer = () => {
           · Modified by
           {' '}
           <a
-            href="https://dongpingguo.cc"
+            href="https://www.donnyguo.com"
             target="_blank"
             rel="noopener noreferrer"
             className="text-hover-primary underline-interactive"

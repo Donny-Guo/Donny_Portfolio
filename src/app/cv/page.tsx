@@ -15,7 +15,7 @@ export const metadata: Metadata = buildMetadata({
     'resume',
     'academic cv',
     'education',
-    'research',
+    // 'research',
     'teaching',
     'skills',
   ],

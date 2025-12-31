@@ -1,37 +1,61 @@
 ---
-title: lAIfe - The AI Life Simulator
-date: 2025-03
+title: lAIfe - Generative AI Simulation Engine
+date: 2025-03-15
 abstract: >
-  I led a four-person team to build lAIfe, an AI-powered life simulator that lets users explore how different decisions might shape their lives. The project won first place in the AI track at HackHayward 2025 by combining narrative generation with an intuitive full-stack interface that makes complex "what if" scenarios feel personal and engaging.
-category: AI/Full-Stack
-role: Team Leader & Full-Stack Developer
+  Architected and developed an award-winning full-stack AI application that simulates complex life trajectories. Built with React (TypeScript) and Flask, the system integrates Groq's high-speed inference API to generate coherent, multi-branch narratives in real-time. Won 1st Place (AI Track) at HackHayward 2025.
+category: AI Engineering / Full-Stack
+role: Tech Lead & Full-Stack Developer
 github: https://github.com/Donny-Guo/lAIfe
 keywords:
-  - interactive storytelling
-  - decision simulation
-  - narrative AI
-  - prompt engineering
-  - cyberpunk gaming
-  - life path exploration
+  - React & TypeScript
+  - Python (Flask)
+  - LLM Integration (Groq)
+  - State Management
+  - JSON
+  - Prompt Engineering
 ---
 
 ![lAIfe Night City Version Interface](/images/projects/laife/start_page.png)
 
-## Overview
+## Project Overview
 
-lAIfe started from a simple observation: everyone wonders about the roads not taken. During late-night conversations with my team, we realized that the "what ifs" people carry—different careers, education paths, relationships—are universal, but there's no easy way to explore them meaningfully. With recent advances in large language models, I saw an opportunity to build something that could simulate these alternate realities in a way that felt personal and grounded in realistic cause-and-effect, not just random chance.
+lAIfe is an interactive simulation engine designed to explore causal relationships in narrative data. While traditional text-based games rely on pre-written decision trees, lAIfe utilizes Large Language Models (LLMs) to dynamically generate consequences based on user input and hidden state variables.
 
-I framed the design around making complex AI-generated narratives feel **accessible and emotionally resonant**. Rather than overwhelming users with technical prompts or abstract scenarios, we built a conversational interface where people input key life details and decision points they're curious about, and the system generates coherent life trajectories that follow logical consequences. The challenge was balancing creative storytelling with realism—users needed to feel like they were seeing genuine possibilities, not science fiction. To achieve this, I developed a **sophisticated prompt engineering system** that dynamically incorporates user statistics, past decisions, and realistic constraints to shape each narrative branch.
+As the **Team Lead and Lead Developer**, I guided a four-person team to build this platform from concept to deployment. Our primary engineering challenge was orchestrating a seamless feedback loop between the user's frontend interaction and the backend's generative logic, ensuring the AI adhered to strict game rules while maintaining narrative creativity. This architecture secured us **1st Place in the AI Track at HackHayward 2025**.
 
-Our latest iteration, **"Night City Version,"** takes this concept into a cyberpunk setting inspired by dystopian fiction, where choices have dramatic stakes. Users select from three life paths (Nomad, Street Kid, or Corporate) and navigate 10 rounds of scenarios that test their ethics and survival instincts in a world where power is everything. With stats tracking Health, Intelligence, and Wealth, every decision affects not just the story but the character's chance of survival. This version proved especially compelling at HackHayward 2025, where it helped us win first place in the AI track by demonstrating how AI-driven narratives can create genuinely immersive experiences.
+## Technical Architecture
+
+I designed a decoupled full-stack architecture to ensure scalability and maintainability:
+
+### Frontend: React + TypeScript + Vite
+
+- **Type Safety:** Migrated the codebase to **TypeScript** to enforce strict typing on game states (e.g., character stats, inventory), significantly reducing runtime errors during complex simulation branches.
+- **Performance:** Utilized **Vite** for optimized building and HMR (Hot Module Replacement), ensuring a smooth developer experience and fast production load times.
+- **Responsive UI:** Implemented a component-based UI that renders dynamic narrative blocks and interactive decision nodes, adapting in real-time to the AI's output.
+
+### Backend: Python (Flask) & AI Orchestration
+
+- **API Design:** Developed a RESTful API using **Flask** to handle game logic, session initialization, and prompt construction.
+- **Low-Latency Inference:** Integrated **Groq API** for LLM processing. By leveraging Groq's LPU (Language Processing Unit) architecture, we achieved near-instantaneous token generation, which is critical for maintaining immersion in a turn-based simulation.
+- **State Management System:** I engineered a robust **JSON-based state manager** that persists simulation context across turns. This system tracks user choices, character attributes (Health, Wealth, Intelligence), and narrative history, injecting them into the LLM context window at each turn to prevent hallucinations and ensure continuity.
 
 ![lAIfe Game System Design](/images/projects/laife/game_system_design.png)
 
-On the technical side, I architected the system with a **Python/Flask backend** that handles API integration with Groq for language model processing, and a **React.js frontend** that creates a responsive, game-like interface. I designed a JSON-based state management system that preserves simulation context across sessions, allowing users to revisit their alternate lives without losing progress. The entire flow—from user input through AI generation to rendered narrative—happens seamlessly, making complex AI feel effortless to interact with.
+## Key Feature: "Night City" Logic Engine
 
-Beyond its entertainment value, lAIfe has broader applications. Educators have expressed interest in using it as a teaching tool for decision theory and ethics courses, while creative writers see it as a narrative prototyping system for testing character arcs. Looking ahead, we're expanding the simulator to support full life cycle simulations starting from birth through 12 major age stages, allowing early decisions to cascade into later opportunities and challenges. My goal is to evolve lAIfe from a hackathon project into a tool that helps people gain perspective on their past and approach future choices with greater clarity.
+To stress-test our architecture, we developed the "Night City Version," a cyberpunk simulation module requiring complex rule enforcement.
 
-## Selected visuals
+- **Dynamic Attribute Tracking:** Unlike standard chatbots, this module tracks three distinct variables: _Health, Intelligence, and Wealth_. I implemented backend logic to parse the LLM's raw text output, extract numerical changes, and update the user's state JSON automatically.
+- **Structured Prompt Engineering:** Designed a "System Prompt" framework that forces the LLM to act as a Game Master, outputting structured data alongside narrative text. This ensured the game logic (e.g., "If Wealth < 0, trigger Game Over") executed reliably across 10 distinct simulation rounds.
+
+## Future Engineering
+
+The project is currently evolving from a hackathon prototype into a robust educational tool. I am currently working on:
+
+- **Long-form Context:** Implementing RAG (Retrieval-Augmented Generation) to support "Full Life Cycle" simulations (Birth to Old Age) without exceeding token limits.
+- **Analytics Integration:** Building a pipeline to aggregate user decision data for behavioral research applications.
+
+## Selected Visuals
 
 ![lAIfe Decision Making Page](/images/projects/laife/decision_making_page.png)
 ![lAIfe End Page](/images/projects/laife/end_of_game_page.png)

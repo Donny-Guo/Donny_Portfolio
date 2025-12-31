@@ -3,7 +3,7 @@ export const EnjuConfig: EnjuFolioConfig = {
   subTitle: 'Donny\'s Portfolio',
   siteShortName: 'Donny',
   description: undefined,
-  siteUrl: 'https://dongpingguo.cc',
+  siteUrl: 'https://www.donnyguo.com',
   cvFileLink: 'https://drive.google.com/file/d/1uG_feM-eiBFi-iB6TsQdp2L5JDSN1XJJ/view?usp=sharing',
   author: 'Donny Guo',
   otherNames: ['Dongping Guo'],
